@@ -6,10 +6,6 @@
 
 LookinLabs Digital Service Book is a web application that helps maintain car service history. It is based on the [Digital Service Book](https://www.digital-servicebook.com/en/for-car-owners/) concept. With LookinLabs Digital Service Book, you can log the exact time when you changed oil, filters, tires, etc. You can also log your car's mileage and fuel consumption.
 
-## Architectural Overview (Draft)
-
-![Architectural Overview](./resources/overview.png)
-
 ## Getting Started
 
 ### Prerequisites

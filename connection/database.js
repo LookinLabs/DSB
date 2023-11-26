@@ -1,4 +1,4 @@
-const { Client } = require('pg');
+const {Client} = require('pg');
 
 const client = new Client({
   user: process.env.POSTGRES_USER,
@@ -8,7 +8,7 @@ const client = new Client({
   port: process.env.POSTGRES_PORT,
 });
 
-client.connect(err => {
+client.connect((err) => {
   if (err) {
     console.error('Database connection error', err.stack);
   } else {

@@ -15,6 +15,9 @@
             <input type="password" id="password" name="password" class="block w-full mb-4 p-2 border border-gray-300 rounded">
             <input type="submit" value="Submit" class="block w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
         </form>
+        <% if (typeof message !== 'undefined') { %>
+            <p style="color: red;"><%= message %></p>
+          <% } %>
     </div>
 </body>
 </html>

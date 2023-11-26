@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     // Redirect to another page after successful login
     res.redirect('/application');
   } else {
-    res.render('index', {message: 'Invalid username or password!'});
+    res.render('index', {message: 'Invalid credentials'});
   }
 });
 

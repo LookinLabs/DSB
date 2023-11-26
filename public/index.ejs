@@ -2,27 +2,37 @@
 <html>
 <head>
     <title>LookinLabs DSB</title>
-    <!-- Load TailWind CSS-->
+    <!-- Load TailWind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Load Custom CSS-->
+    <!-- Load Fonts Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Load Custom CSS -->
     <link href="/css/main.css" rel="stylesheet">
 </head>
 <body class="min-h-screen background-image">
     <div class="w-full md:w-1/2 lg:w-1/3 h-screen bg-white bg-opacity-5 flex flex-col items-center justify-center ml-auto">
         <img src="/img/logo.png" alt="Logo" class="mb-4 w-48 h-48">
-        <form action="/" method="post" class="w-3/4 sm:w-1/2 md:w-full max-w-xs bg-opacity-30 rounded p-4">
-            <div class="mb-4">
-                <label for="username" class="mb-2 text-sm font-medium text-white">Username:</label>
-                <input type="text" id="username" name="username" class="w-full p-2 border border-gray-300 rounded bg-opacity-30 placeholder-gray-500">
+        <p class="text-white text-xl mb-4">LookinLabs Digital Service Book</p>
+        <form action="/" method="post" class="w-3/4 sm:w-1/2 md:w-full max-w-xs bg-opacity-30 rounded p-4 mx-auto my-10">
+            <div class="mb-6">
+                <input type="text" id="username" name="username" placeholder="Username" class="w-full p-2 border border-gray-100 rounded bg-gray-800 placeholder-gray-500">
             </div>
-            <div class="mb-4">
-                <label for="password" class="mb-2 text-sm font-medium text-white">Password:</label>
-                <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded bg-opacity-30 placeholder-gray-500">
+            <div class="mb-6">
+                <input type="password" id="password" name="password" placeholder="Password" class="w-full p-2 border border-gray-100 rounded bg-gray-800 placeholder-gray-500">
             </div>
-            <input type="submit" value="Submit" class="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
+            <input type="submit" value="Submit" class="w-8/12 p-2 text-white bg-gray-700 rounded hover:bg-gray-500 mx-10 my-10">
         </form>
         <% if (typeof message !== 'undefined') { %>
-            <p class="text-red-500"><%= message %></p>
+            <div class="flex items-center">
+                <p class="text-red-500"><%= message %></p>
+                <div class="ml-2 relative">
+                    <i class="fas fa-info-circle text-gray-500 hover:text-gray-600 cursor-pointer group">
+                        <div class="absolute left-0 w-48 p-2 mt-2 text-sm text-white bg-gray-500 rounded shadow-lg opacity-0 group-hover:opacity-100">
+                            Contact LookinLabs Administrator to get more information.
+                        </div>
+                    </i>
+                </div>
+            </div>
         <% } %>
     </div>
 </body>

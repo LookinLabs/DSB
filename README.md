@@ -1,6 +1,6 @@
 # LookinLabs Digital Service Book
 
-[![ESLint](https://github.com/LookinLabs/DSB/actions/workflows/lint.yml/badge.svg)](https://github.com/LookinLabs/DSB/actions/workflows/lint.yml)
+![ESLint](https://github.com/LookinLabs/DSB/actions/workflows/lint.yml/badge.svg)
 
 > **Status:** Currently in development. Not ready for production use!
 

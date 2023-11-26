@@ -1,26 +1,33 @@
 # Use an official Node.js runtime as the base image
-FROM node:14
+FROM node:14 as builder
 
-# Create a new user to our new container and avoid the root user
-RUN useradd --user-group --create-home --shell /bin/false app \
-    && npm config set unsafe-perm true
-
-# Set the working directory in the container to /home/app
-WORKDIR /home/app
+# Set the working directory in the container to /app
+WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
 # Install any needed packages specified in package.json
-RUN npm install
+RUN npm install --no-dev 
 
 # Copy the rest of the application to the working directory
 COPY . .
 
-# Change the ownership of the application files to the app user
-RUN chown -R app:app /home/app
+FROM node:14-alpine
 
-# Switch to 'app' user
+# Create a new user to our new container and avoid the root user
+RUN addgroup -S app && adduser -S app -G app -h /app \
+    && npm config set unsafe-perm true
+
+# Set the working directory in the container to /home/app
+WORKDIR /app
+
+COPY --from=builder /app .
+
+# Set Correct permissions
+RUN chown -R app:app /app
+
+# Change system user
 USER app
 
 # Make port 8080 available to the world outside this container

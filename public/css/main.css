@@ -1,1 +1,4 @@
 /* Manual CSS */
+body {
+    background: linear-gradient(to right,#262698, #420a7e);
+}

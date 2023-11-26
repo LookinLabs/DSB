@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public'));
 
 app.use('/', userLogin);
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   res.render('index');
